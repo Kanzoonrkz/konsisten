@@ -6,7 +6,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('Home Page'),
+      body: SafeArea(child: Text('Home Page'),),
     );
   }
 }
