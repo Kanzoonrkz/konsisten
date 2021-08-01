@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:konsisten/navbar_widgets/mainbotappbar.dart';
 import 'package:konsisten/pages/activitiespage.dart';
 import 'package:konsisten/pages/historypage.dart';
 import 'package:konsisten/pages/homepage.dart';
@@ -17,9 +18,14 @@ class MyApp extends StatelessWidget {
       title: 'konsisten',
       theme: ThemeData(),
       home: MainPage(),
+      // Below
     );
   }
 }
+
+/**
+ * 
+ */
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -29,9 +35,10 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  // Default page
   int index = 0;
 
-  //Page lists
+  // Page lists
   final pages = <Widget>[
     HomePage(),
     HistoryPage(),
@@ -41,6 +48,19 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      bottomNavigationBar: MainBotAppBar(
+        index: index,
+        onChangedTab: onChangedTab,
+        key: Key('value'),
+      ),
+      body: pages[index],
+    );
+  }
+
+  void onChangedTab(int index) {
+    setState(() {
+      this.index = index;
+    });
   }
 }

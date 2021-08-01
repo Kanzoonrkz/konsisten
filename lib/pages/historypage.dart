@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class HistoryPage extends StatelessWidget {
-  const HistoryPage({ Key? key }) : super(key: key);
+  const HistoryPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('History Page'),
+      body: SafeArea(
+        child: Text('History Page'),
+      ),
     );
   }
 }
