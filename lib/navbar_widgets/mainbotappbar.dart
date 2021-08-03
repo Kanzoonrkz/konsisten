@@ -20,26 +20,46 @@ class _MainBotAppBarState extends State<MainBotAppBar> {
     return BottomAppBar(
       shape: CircularNotchedRectangle(),
       notchMargin: 6,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          buildNavItem(
-            index: 0,
-            icon: SvgPicture.asset('assets/icons/nav_home.svg'),
-          ),
-          buildNavItem(
-            index: 1,
-            icon: SvgPicture.asset('assets/icons/nav_history.svg'),
-          ),
-          buildNavItem(
-            index: 2,
-            icon: SvgPicture.asset('assets/icons/nav_activity.svg'),
-          ),
-          buildNavItem(
-            index: 3,
-            icon: SvgPicture.asset('assets/icons/nav_profile.svg'),
-          ),
-        ],
+      child: Container(
+        padding: EdgeInsets.only(
+          left: 27,
+          right: 27,
+        ),
+        height: 65,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            buildNavItem(
+              index: 0,
+              icon: SvgPicture.asset(
+                'assets/icons/nav_home.svg',
+                height: double.infinity,
+              ),
+            ),
+            buildNavItem(
+              index: 1,
+              icon: SvgPicture.asset(
+                'assets/icons/nav_history.svg',
+                height: double.infinity,
+              ),
+            ),
+            Padding(padding: EdgeInsets.all(30)),
+            buildNavItem(
+              index: 2,
+              icon: SvgPicture.asset(
+                'assets/icons/nav_activity.svg',
+                height: double.infinity,
+              ),
+            ),
+            buildNavItem(
+              index: 3,
+              icon: SvgPicture.asset(
+                'assets/icons/nav_profile.svg',
+                height: double.infinity,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
