@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:konsisten/navbar_widgets/mainannouncebutton.dart';
 import 'package:konsisten/navbar_widgets/mainbotappbar.dart';
 import 'package:konsisten/pages/activitiespage.dart';
 import 'package:konsisten/pages/historypage.dart';
@@ -49,6 +50,8 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: MainAnnounceButton(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: MainBotAppBar(
         index: index,
         onChangedTab: onChangedTab,
